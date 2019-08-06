@@ -39,6 +39,7 @@ const datastore = new Datastore({
 - Update, List, Delete
 - Setup for Staging and Production
 - CI 
+- Apollo Server
 
 ## Running the tests
 [appengine]: https://cloud.google.com/appengine/docs/standard/nodejs
