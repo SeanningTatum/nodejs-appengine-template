@@ -19,10 +19,24 @@ Before you can run or deploy the sample, you need to do the following:
 1.  Install dependencies:
 
         npm install
+        
+Step 2: *Add Service Key*
+
+    Follow instructions and download service key from here[https://cloud.google.com/docs/authentication/getting-started]
+    Move service key in project directory and rename service key to *service-key.json* for git ignore purposes
+
+
+Step 3: *Intialize Datastore with your credentials*
+```ts
+const datastore = new Datastore({
+    projectId: 'adventure-time-123', 
+    keyFilename: './service-key.json', 
+});
+```
 
 ## Running locally
 
-    npm start
+    npm start or yarn start
 
 ## Deploying to App Engine
 
