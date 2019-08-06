@@ -22,8 +22,8 @@ Before you can run or deploy the sample, you need to do the following:
         
 Step 2: *Add Service Key*
 
-    Follow instructions and download service key from here[https://cloud.google.com/docs/authentication/getting-started]
-    Move service key in project directory and rename service key to *service-key.json* for git ignore purposes
+Follow instructions and download service key from here[https://cloud.google.com/docs/authentication/getting-started]
+Move service key to `/config/` and rename service key to *service-key.json* for git ignore and secrity purposes
 
 
 Step 3: *Intialize Datastore with your credentials*
@@ -41,11 +41,15 @@ const datastore = new Datastore({
 ## Deploying to App Engine
 
     gcloud app deploy
+    
+## TODO
+- Authentication Middleware
+- Typescript
+- Update, List, Delete
+- Setup for Staging and Production
+- CI 
 
 ## Running the tests
-
-See [Contributing][contributing].
-
 [appengine]: https://cloud.google.com/appengine/docs/standard/nodejs
 [tutorial]: https://cloud.google.com/appengine/docs/standard/nodejs/quickstart
 [readme]: ../../README.md
