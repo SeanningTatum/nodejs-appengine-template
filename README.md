@@ -1,14 +1,5 @@
-# Quickstart for Node.js in the App Engine standard environment
+# GAE NodeJS / Express with Datastore ORM
 
-This is the sample application for the
-[Quickstart for Node.js in the App Engine standard environment][tutorial]
-tutorial found in the [Google App Engine Node.js standard environment][appengine]
-documentation.
-
-* [Setup](#setup)
-* [Running locally](#running-locally)
-* [Deploying to App Engine](#deploying-to-app-engine)
-* [Running the tests](#running-the-tests)
 
 ## Setup
 
@@ -19,19 +10,37 @@ Before you can run or deploy the sample, you need to do the following:
 1.  Install dependencies:
 
         npm install
+        
+Step 2: *Add Service Key*
+
+Follow instructions and download service key from here[https://cloud.google.com/docs/authentication/getting-started]
+Move service key to `/config/` and rename service key to *service-key.json* for git ignore and secrity purposes
+
+
+Step 3: *Intialize Datastore with your credentials*
+```ts
+const datastore = new Datastore({
+    projectId: 'adventure-time-123', 
+    keyFilename: './service-key.json', 
+});
+```
 
 ## Running locally
 
-    npm start
+    npm start or yarn start
 
 ## Deploying to App Engine
 
     gcloud app deploy
+    
+## TODO
+- Authentication Middleware
+- Typescript
+- Update, List, Delete
+- Setup for Staging and Production
+- CI 
 
 ## Running the tests
-
-See [Contributing][contributing].
-
 [appengine]: https://cloud.google.com/appengine/docs/standard/nodejs
 [tutorial]: https://cloud.google.com/appengine/docs/standard/nodejs/quickstart
 [readme]: ../../README.md
